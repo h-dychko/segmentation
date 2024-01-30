@@ -29,7 +29,7 @@ jupyter notebook
 ```
 conda activate segmentation 
 
-streamlit run start.py
+streamlit run Start.py
 ```
 
 ## About Repo:
