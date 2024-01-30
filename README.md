@@ -36,4 +36,3 @@ streamlit run Start.py
 * `/notebooks` contains EDA of customers' data 
 * `/data` - .csv file with customers' info to work with
 * `/pages` - pages of the web app
-* `/tools` - folder with tools
