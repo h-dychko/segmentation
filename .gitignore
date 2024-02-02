@@ -2,8 +2,6 @@
 __pycache__/
 *.py[cod]
 *$py.class
-data/*.pckl
-data/*.csv
 notebooks/.ipynb_checkpoints
 
 # C extensions
