@@ -67,9 +67,9 @@ with st.container():
         # Expected solution: 
         # st.bar_chart(data=df_stats_by_cat, y='sum', color='#5674a5', height=300, width=450, use_container_width=True)
 
-        ########################################################################################################
-        # TODO: Compare the st.bar_chart with the one from plotly express
-        ########################################################################################################
+        # ########################################################################################################
+        # # TODO: Compare the st.bar_chart with the one from plotly express
+        # ########################################################################################################
 
         f = px.bar(
             df_stats_by_cat, 
@@ -156,6 +156,7 @@ with st.expander("Averages by clusters:", expanded=True):
                 # Hint: To color text use construction: :{COLOR}[TEXT]
                 ########################################################################################################
                 # Expected solution: st.markdown(f":{cluster_color}[Cluster #{c}: ]")
+                st.markdown(f":{cluster_color}[Cluster #{c}: ]")
                 
                 # create a column for each metric 
                 # extract the metric's values by cluster and by the whole population
@@ -190,6 +191,7 @@ with st.expander("Averages by clusters:", expanded=True):
                     # Hint: Change a `delta_color` parameter of a st.metric method
                     ########################################################################################################
                     # Expected solution: st_cols[i].metric(label=col_name, value=cl_value_frmt, delta=over_value_frmt, delta_color='off')
+                    st_cols[i].metric(label=col_name, value=cl_value_frmt, delta=over_value_frmt, delta_color='off')
                     
     # -> fill the second tab with a table
     with tab_2:
