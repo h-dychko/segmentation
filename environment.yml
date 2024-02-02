@@ -1,7 +1,4 @@
 ﻿name: segmentation
-channels:
-  - conda-forge
-  - defaults
 dependencies:
   - ipykernel
   - ipython
