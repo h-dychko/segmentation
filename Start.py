@@ -4,7 +4,7 @@ The initial page of the app with
 -> metrics, tables
 -> streamlit's tabs
 """
-import argparse
+from typing import Dict
 
 import streamlit as st
 import plotly.express as px
@@ -17,11 +17,15 @@ from define_objects import (
     PALETTE
 )
 
-
-# parse arguments from the command line
-parser = argparse.ArgumentParser()
-parser.add_argument("--algo", required=True , choices=['kmeans', 'dbscan'], help="A clustering algorithm selection")
-args = parser.parse_args()
+######################################################################################################
+# HW: If you'd like tp play with parsing arguments from the command line -- uncomment the code below
+# 
+# import argparse
+# parser = argparse.ArgumentParser()
+# parser.add_argument("--algo", required=True , choices=['kmeans', 'dbscan'], help="A clustering algorithm selection")
+# args = parser.parse_args()
+######################################################################################################
+args: Dict[str, str] = dict(algo='kmeans')
 
 # set page configuration
 st.set_page_config("Segmentation", layout="wide")
@@ -128,7 +132,7 @@ with st.container():
 # 2. add expander with clusters' charecteristics: median/top values by features, which differ from cluster to cluster
 
 #  exract a data frame with computed statistics per cluster
-df_selected_stats = df_stats_by_clst[args.algo][f'k={st.session_state.n_clusters}']
+df_selected_stats = df_stats_by_clst[args['algo']][f'k={st.session_state.n_clusters}']
 n_features = df_selected_stats.shape[1]
 
 with st.expander("Averages by clusters:", expanded=True):
