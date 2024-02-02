@@ -40,7 +40,6 @@ st.sidebar.selectbox(
 st.multiselect(
     'Search', options=df.columns, 
     key='feature', help=None, 
-    placeholder="Choose a feature"
 )
 
 # function to plot distribution with caching from sreamlit
@@ -86,9 +85,10 @@ def display_distribution(data: pd.DataFrame,
 
 # create a container with plots of distributions of selected features
 with st.container():
-    display_distribution(
-        data=df, features=st.session_state.feature, 
-        cluster_col=f'k={st.session_state.n_clusters}', 
-        pallete=PALETTE[st.session_state.n_clusters],
-        categorical_cols=CATEGORICAL_COLS
-    )
+    if st.session_state.get('feature'):
+        display_distribution(
+            data=df, features=st.session_state.feature, 
+            cluster_col=f'k={st.session_state.n_clusters}', 
+            pallete=PALETTE[st.session_state.n_clusters],
+            categorical_cols=CATEGORICAL_COLS
+        )

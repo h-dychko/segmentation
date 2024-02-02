@@ -10,6 +10,7 @@ from define_objects import (
 )
 
 
+# text input
 ################################################################################################
 # TODO: Add text input for user's ID 
 # - define label as 'ID', 
@@ -23,10 +24,6 @@ from define_objects import (
 ################################################################################################
 # Expected solution: st.text_input('ID', max_chars=5, key='ID')
 
-# text input
-st.text_input(
-    'ID', value="", max_chars=5, key='ID'
-)
 
 # display a row, which corresponds to the input user's ID 
 # -> there is one in the data frame
